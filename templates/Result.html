@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iris Application</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--	"{{ url_for('static', filename='css/main.css') }}"-->
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">  -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animsition/css/animsition.min.css') }}">   
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+<!--
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+-->
+	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body>
+        <div class="container-contact100">
+
+		<div class="wrap-contact100">
+			<div class="contact100-form-title" style="background-image: url({{ url_for ('static', filename = 'images/bg-01.jpg') }});;">
+				<span class="contact100-form-title-1">
+					<h1 style="font-family: cursive">Iris Flower Classification Application</h1>
+				</span>
+
+				<span class="contact100-form-title-2">
+					
+					<h1 style="font-family: cursive">Result of Iris Flower Classification </h1>
+				</span>
+			</div>
+    <div class="container">
+       <span class="font-weight-light">
+					Result of Iris Flower Classification &raquo;
+				</span>
+    </div>
+     <div class="container">
+      
+   
+    {% if prediction_text== 'setosa'%}
+       <img  src="{{ url_for('static', filename='images/setosa.jpg') }}" alt="" class="img-circle" width="300" height="300">
+        <p class="font-weight-light" style="font-size: 2em" > Output &raquo; Setosa</p>
+    
+    {% elif prediction_text == 'virginica'%}
+    <img  src="{{ url_for('static', filename='images/iris versicolor.jpg') }}" alt="" class="img-circle" width="300" height="300">
+    <p class="font-weight-light" style="font-size: 2em">Output &raquo; Virginica</p>
+     {% elif prediction_text == 'versicolor'%}
+     <img class="img-circle" src="{{ url_for('static', filename='images/virginica.jfif') }}" alt="" width="300" height="300">
+     <p class="font-weight-light" style="font-size: 2em">Output &raquo; Versicolor</p>
+    {% endif %}
+</div>
+            </div>
+
+
+
+
+</body>
+</html>
